@@ -13,7 +13,11 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author CJAMORIM
+ * @author
+CARLOS JOSE DE AMORIM - RA 917207155
+ALEXSANDRO SILVA PIAZZA- RA 916119196
+BRUNO OLIVEIRA BRAZ - RA - RA 916111837
+GLAUCYANY LIRA DA CRUZ - RA - RA 916116774
  */
 public class JavaAppAgenda {
 
