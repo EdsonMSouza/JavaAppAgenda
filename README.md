@@ -28,7 +28,7 @@ Pass: 1234
 # Criação do Banco:
 
 BD: Agenda
-Ob.: o BD está anexo em um arquivo .rar.
+Ob.: Segue anexo o script para geraçãodas tabelas..
 
 # Criação das tabelas: Usuário e Tarefas
 
