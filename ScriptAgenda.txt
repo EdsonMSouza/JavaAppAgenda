@@ -1,0 +1,84 @@
+﻿-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 08/12/2017 às 21:44
+-- Versão do servidor: 5.7.19
+-- Versão do PHP: 5.6.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `agenda`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `sequence`
+--
+
+DROP TABLE IF EXISTS `sequence`;
+CREATE TABLE IF NOT EXISTS `sequence` (
+  `SEQ_NAME` varchar(50) NOT NULL,
+  `SEQ_COUNT` decimal(38,0) DEFAULT NULL,
+  PRIMARY KEY (`SEQ_NAME`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `sequence`
+--
+
+INSERT INTO `sequence` (`SEQ_NAME`, `SEQ_COUNT`) VALUES('SEQ_GEN', '50');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tarefa`
+--
+
+DROP TABLE IF EXISTS `tarefa`;
+CREATE TABLE IF NOT EXISTS `tarefa` (
+  `id` bigint(20) NOT NULL,
+  `Data` date NOT NULL,
+  `Descricao` varchar(30) NOT NULL,
+  `id_Usuario` bigint(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_tarefa_id_Usuario` (`id_Usuario`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` bigint(20) NOT NULL,
+  `Nome` varchar(10) NOT NULL,
+  `Senha` varchar(6) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNQ_usuario_0` (`Nome`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `Nome`, `Senha`) VALUES(1, 'Admin', 'abcde');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
