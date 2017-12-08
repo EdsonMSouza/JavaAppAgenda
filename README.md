@@ -32,14 +32,14 @@ Ob.: o BD está anexo em um arquivo .rar.
 
 # Criação das tabelas: Usuário e Tarefas
 
-create table 'agenda'.usuario
+create table agenda.usuario
 (
 id BIGINT not null primary key,
 Nome VARCHAR(10) not null unique,
 Senha VARCHAR(6) not null
 )
 
-create table 'agenda'.tarefa
+create table agenda.tarefa
 (
 id BIGINT not null primary key,
 Data DATE not null,
