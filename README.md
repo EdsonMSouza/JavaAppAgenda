@@ -28,22 +28,5 @@ Pass: 1234
 # Criação do Banco:
 
 BD: Agenda
-Ob.: Segue anexo o script para geraçãodas tabelas..
+Ob.: Segue anexo o script para geração das tabelas.
 
-# Criação das tabelas: Usuário e Tarefas
-
-create table agenda.usuario
-(
-id BIGINT not null primary key,
-Nome VARCHAR(10) not null unique,
-Senha VARCHAR(6) not null
-)
-
-create table agenda.tarefa
-(
-id BIGINT not null primary key,
-Data DATE not null,
-Descricao VARCHAR(30) not null,
-id_Usuario BIGINT not null,
-foreign key(id_Usuario) references usuario(id)
-)
